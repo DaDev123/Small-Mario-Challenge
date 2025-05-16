@@ -105,8 +105,11 @@ void updateDeathCounter(PlayerActorHakoniwa* player, StageScene* stageScene) {
         if (deathCount == 69) {
             al::setPaneStringFormat(layout->coinCounter, "TxtEvent", "Nice");
             al::showPane(layout->coinCounter, "TxtEvent");
-            al::emitEffect(player, "Invincible", al::getTransPtr(player));
-            hitData->getEventHealth();
+            
+            if (hitData->getCurrent() > 0) {
+                al::emitEffect(player, "Invincible", al::getTransPtr(player));
+                hitData->getEventHealth();
+            }
         } else {
             al::hidePane(layout->coinCounter, "TxtEvent");
         }
