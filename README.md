@@ -9,6 +9,8 @@ So here i am, i remade the whole mod myself with every Features from Crafty's Mo
 
 This [video](https://youtu.be/3t7oWX5d9nI?si=4jGGOO6qV7G5XEaf) is a good exemple of the Mod!
 
+[Gamebanana Link](https://gamebanana.com/mods/602667)
+
 # Credits
 - [OdysseyDecomp](https://github.com/shibbo/OdysseyDecomp)
 - [OdysseyReversed](https://github.com/shibbo/OdysseyReversed)
