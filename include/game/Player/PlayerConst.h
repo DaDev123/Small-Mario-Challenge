@@ -4,6 +4,10 @@
 
 class PlayerConst { // 0x9A8 i think is PlayerConst's size, which is every single entry plus some extra space for something
     public: // note: these functions are in the order that the addresses are in, so doing a bit of messing around with these declarations should also allow for the full header to be decompiled
+        void smallMarioConst(float value);
+        void normalMarioConst(float value);
+
+    
         virtual float getGravity(void) const;
         virtual float getFrictionAttack(void) const;
         virtual float getPushPower(void) const;

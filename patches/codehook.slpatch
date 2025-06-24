@@ -136,3 +136,51 @@ A4BC70 BL offsetOverideHook
 
 41E764 NOP
 // 455230 NOP // PlayerJointControlKeeper::update+C0 prevents PlayerJointControlGroundPose from updating 
+
+// Remap Snapshot to !L + Down
+577014 B comboBtnHook
+
+//LifeUpMaxItem demo skip
+4DB934 NOP
+
+
+// Notes
+2D250C NOP
+
+//Moon Patches
+4DE2F8 MOV W0, #1
+4DE6AC MOV W0, #1
+4DE710 MOV W0, #1
+4DE974 MOV W0, #1
+4DE984 MOV W0, #1
+4DE9F8 MOV W0, #1
+4DEA48 NOP
+4DEA70 MOV W0, #1
+4DEB30 MOV W0, #1
+4DED44 MOV W0, #1
+4DED80 MOV W0, #1
+4DED90 MOV W0, #1
+
+// Shines Demo Skip
+1D18F0 NOP
+1D1934 NOP
+4DBC20 NOP
+4DBF08 NOP
+4DBF14 NOP
+4DBF54 MOV W0, #1
+4DBF60 MOV W0, #1
+4DC1D4 NOP
+4DC578 MOV W0, #1
+4DC584 MOV W0, #1
+4DC66C MOV W0, #1
+4DC8B0 MOV W0, #1
+4DCA64 MOV W0, #1
+4DCA9C MOV W0, #1
+// Shine Healing Demo
+4df0ac MOV W0, #1
+4df16c MOV W0, #1
+4eecb0 MOV W0, #1
+4eed90 MOV W0, #1
+4eed9c MOV W0, #1
+4df180 MOV W0, #1
+4dc740 MOV W0, #1

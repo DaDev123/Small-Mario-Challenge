@@ -1,6 +1,7 @@
 #include "sead/prim/seadSafeString.h"
 #include "main.hpp"
 #include "al/util.hpp"
+#include "al/util/ControllerUtil.h"
 #include "game/Player/HackCap/CapFunction.h"
 #include "sead/prim/seadSafeString.hpp"
 #include "al/string/StringTmp.h"
@@ -13,9 +14,23 @@ void sensorHook(al::LiveActor *actor, al::ActorInitInfo const &initInfo, char co
     al::addHitSensor(actor, initInfo, sensorName, typeEnum, radius, maxCount, newPos);
 }
 
+
 float followDistHook() {
-            return 270.f;
+    static bool toggled = false;
+    static bool wasComboPressed = false;
+
+    // Combo: L + D-pad Down
+    bool comboPressed = al::isPadHoldL(-1) && al::isPadTriggerDown(-1);
+
+    // Toggle only on the rising edge
+    if (comboPressed && !wasComboPressed) {
+        toggled = !toggled;
+    }
+    wasComboPressed = comboPressed;
+
+    return toggled ? 1800.f : 270.f;
 }
+
 
 void playerSizeHook(PlayerActorHakoniwa* player){
   al::setScaleAll(player, 0.3f);
@@ -58,3 +73,13 @@ const char* offsetOverideHook(al::ByamlIter const& iter, char const* key) {
              return "Y0.5m";
              return al::tryGetByamlKeyStringOrNULL(iter, key);
     }
+
+
+bool comboBtnHook(int port) {
+    if (!al::isPadHoldL(port) && al::isPadTriggerDown(port)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
